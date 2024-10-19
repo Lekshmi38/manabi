@@ -24,8 +24,6 @@ Sure! Here's the content broken down into fun, engaging points with emojis:
 
 6. **Engage and Enjoy!** 🎮
    - With storytelling and visuals, you’ll **remember faster**, **learn better**, and **have fun**! 
-
----
-
-Hope that brings out the fun, learning vibe! Let me know if you'd like any adjustments!
+ ---
+ 
 ![manabi](https://github.com/user-attachments/assets/72f2b0b3-40d8-4614-82ce-ae73f9fdccc5)
