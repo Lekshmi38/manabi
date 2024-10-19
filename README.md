@@ -1,4 +1,4 @@
-# manabi
+# Manabi
 
 ## Manabi is a platform where learning is fun.
 
