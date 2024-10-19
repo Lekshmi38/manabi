@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manabi Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+    background-image: url('C:/Users/WIIS/Downloads/Room Girl Working Copy - Copy@3-1280x593.png');
+    background-size: 80%; /* or 'contain' depending on your preference */
+    background-repeat: no-repeat;
+    background-position: center 130%; /* Adjust the vertical position here */
+    height: 100vh; /* Make sure the body takes up the full viewport height */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color:#B2AFE5;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text vertically */
+    height: 100vh; /* Full height */
+    z-index: 10;
+    color: #333;
+    margin-top: -100px;
+}
+
+.text-container {
+    text-align: center;
+    z-index: 100;
+    margin-top: -100px;
+}
+
+h1 {
+    font-size: 4em;
+    color: #3e3e68;
+}
+
+p {
+    font-size: 1.5em;
+    color: #6f6f91;
+    margin-bottom: 20px;
+}
+
+    .btn {
+      padding: 15px 30px;
+      background-color: #9ef99b;
+      color: #000;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #82db83;
+    }
+
+    
+    .nav {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .login {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #9ef99b;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #333;
+    }
+
+    .login:hover {
+      background-color: #82db83;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">manabi</div>
+  <div class="login">Log In</div>
+  
+  <div class="container">
+    <div class="text-container">
+      <h1>Bored of boring?</h1>
+      <p>Start learning with all the fun that you could have!</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+ </body>
+</html>
