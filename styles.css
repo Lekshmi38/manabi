@@ -89,5 +89,32 @@
   .submit-btn:hover {
     background-color: #a0d975;
   }
+
+@font-face {
+    font-family: 'Mona Sans';  /* The name you will use in CSS */
+    src: url('./fonts/MonaSans-Bold.otf') format('otf');
+    font-weight: bold; /* Weight of the font (normal, bold, etc.) */
+    font-style: normal;  /* Style of the font (normal, italic, etc.) */
+}
+
+@font-face {
+    font-family: 'Mona Sans';  /* The name you will use in CSS */
+    src: url('./fonts/MonaSansExpanded-Bold.otf') format('otf');
+    font-weight: bold; /* Weight of the font (normal, bold, etc.) */
+    font-style: expanded;  /* Style of the font (normal, italic, etc.) */
+}
+@font-face {
+    font-family: 'Mona Sans';  /* The name you will use in CSS */
+    src: url('./fonts/MonaSansCondensed-Regular.otf') format('otf');
+    font-weight: Normal; /* Weight of the font (normal, bold, etc.) */
+    font-style: Condensed;  /* Style of the font (normal, italic, etc.) */
+}
+@font-face {
+    font-family: 'Mona Sans';  /* The name you will use in CSS */
+    src: url('./fonts/MonaSansExpanded-Medium.otf') format('otf');
+    font-weight: Medium; /* Weight of the font (normal, bold, etc.) */
+    font-style: Expanded;  /* Style of the font (normal, italic, etc.) */
+}
+
   
   
