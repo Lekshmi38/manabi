@@ -1,7 +1,6 @@
 # manabi
 
 ## Manabi is a platform where learning is fun.
-Sure! Here's the content broken down into fun, engaging points with emojis:
 
 ---
 
