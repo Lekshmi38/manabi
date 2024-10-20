@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manabi Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+ 
+    body, html {
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      background-color: #B2AFE5;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      z-index: 10;
+      color: #333;
+      margin-top: 200px;
+    }
+
+    .text-container {
+      text-align: center;
+      z-index: 100;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #9ef99b;
+      color: #000;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 200px; /* Adjust this value to move the button down */
+    }
+
+    .btn:hover {
+      background-color: #82db83;
+    }
+
+    .nav {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5em;
+      color: #333;
+      z-index: 101;
+    }
+
+    .login {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #9ef99b;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #333;
+      z-index: 101;
+    }
+
+    .login:hover {
+      background-color: #82db83;
+    }
+
+    .iframe-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">manabi</div>
+  <div class="login"><a href="./dashboard.html" class="btn">Login In</a></div>
+  
+  <div class="container">
+    <div class="text-container">
+      <a href="./landing.html" class="btn">Get Started</a>
+    </div>
+  </div>
+
+  <div class="iframe-container">
+    <iframe src='https://my.spline.design/roomgirlworkingcopy-5a97aa50e28dc1a2964192a6f8f32e8d/' frameborder='0'></iframe>
+  </div>
+  
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
