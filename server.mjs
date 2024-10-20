@@ -31,29 +31,35 @@ const HUGGINGFACE_API_URL = "https://api-inference.huggingface.co/models/black-f
 const HUGGINGFACE_API_KEY = process.env.HUGGINGFACE_API_KEY;
 
 // Define a route to generate the comic
+// Define a route to generate the comic
 app.post('/generate-comic', async (req, res) => {
     const scenario = req.body.scenario;
     const panels = await generatePanels(scenario);
 
-    // Generate image paths and create images for each panel
-    const imagePaths = [];
-    for (let i = 0; i < panels.length-5; i++) { // Ensure it generates for all panels
-        const prompt = createImagePrompt(panels[i]);
-        const imageFilename = `panel_${i + 1}.png`;
-        
-        // Save the images to the public folder
-        await generateComicImage(prompt, 'public', imageFilename);
-        imagePaths.push(`/public/${imageFilename}`);
-    }
+    // Array to hold the text for each panel
+    const panelTexts = []; 
 
-    res.status(200).send('Comic panels generated successfully!');
+    for (let i = 0; i < panels.length-5; i++) { // Loop through all panels
+        // Push the structured text of the current panel to the panelTexts array
+        panelTexts.push({
+            characters: panels[i].characters,
+            background: panels[i].background,
+            text: panels[i].text
+        });
+    }
+  console.log(panelTexts);
+    // Send back the panel texts as a response
+    res.status(200).json({ message: 'Comic panels generated successfully!', panelTexts });
 });
+
 app.post('/generate-mnemonic', async (req, res) => {
     const chemicalReaction = req.body.reaction; // Get the chemical reaction from the request
+    console.log('Received chemical reaction:', chemicalReaction);
 
     try {
         // Create prompt for the Gemini API
         const mnemonicPrompt = createMnemonicPrompt(chemicalReaction);
+        console.log('Mnemonic Prompt:', mnemonicPrompt);
 
         // Send request to Gemini API
         const mnemonicResponse = await axios.post(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
@@ -61,6 +67,8 @@ app.post('/generate-mnemonic', async (req, res) => {
         }, {
             headers: { 'Content-Type': 'application/json' }
         });
+
+        console.log('Mnemonic Response:', mnemonicResponse.data); // Log the entire response
 
         const mnemonicData = mnemonicResponse.data;
         if (mnemonicData?.candidates?.length > 0) {
@@ -70,10 +78,11 @@ app.post('/generate-mnemonic', async (req, res) => {
             throw new Error('No mnemonic generated.');
         }
     } catch (error) {
-        console.error('Error generating mnemonic:', error.message);
-        res.status(500).send('Error generating mnemonic: ' + error.message);
+        console.error('Error generating mnemonic:', error.response ? error.response.data : error.message);
+        res.status(500).send('Error generating mnemonic: ' + (error.response ? error.response.data : error.message));
     }
 });
+
 
 // Function to create the prompt for mnemonic generation
 function createMnemonicPrompt(reaction) {
@@ -109,8 +118,8 @@ async function generatePanels(scenario) {
 
 // Create the prompt for the AI model
 function createPrompt(scenario) {
-    return `You are a cartoon creator.
-You will be given a short scenario, you must split it into 6 parts.
+    return `You are a cartoon creator who makes comics for students.
+You will be given a short  topic, you must split it into 6 parts.
 Each part will be a different cartoon panel.
 For each cartoon panel, you will write a description of it with:
 - the characters in the panel, they must be described precisely each time
@@ -122,7 +131,7 @@ You will also write the text of the panel.
 The text should not be more than 2 small sentences.
 Each sentence should start with the character name.
 The story should have quotes and also more specific instruction for image generation. 
-The generated story should be good enough for the comic image generation. So give accordingly specifying its requirements also in each panel. 
+The generated story should be coherent enough for the comic image generation. So give instructions accordingly specifying its requirements also in each panel. 
 Short Scenario:
 ${scenario}
 
