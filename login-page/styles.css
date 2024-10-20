@@ -1,0 +1,105 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 97%;
+}
+
+.login-box {
+    background-color: #1E1E1E;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    text-align: center;
+}
+
+/* App Name Styling */
+.app-name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #6f00ff;
+    margin-bottom: 40px;
+}
+
+/* Login Form Styles */
+.login-form label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #3A3A3A;
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+   
+    margin-bottom: 20px;
+}
+
+.input-field::placeholder {
+    color: #B0B0B0;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    color: #6200ff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling */
+.login-button {
+    background-color: #6f00ff;
+    border: none;
+    padding: 15px;
+    color: #121212;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    background-color: #8f07ff;
+}
+
+/* Signup Prompt */
+.signup-prompt {
+    color: #B0B0B0;
+}
+
+.signup-link {
+    color: #6200ff;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
